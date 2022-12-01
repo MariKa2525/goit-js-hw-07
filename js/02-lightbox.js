@@ -23,3 +23,9 @@ return galleryItems.map(({ preview, original, description }) => {
     }).join('');
 }
 
+new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsData: 'alt',
+    captionsDelay: 250,
+});
+

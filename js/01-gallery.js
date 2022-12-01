@@ -24,6 +24,8 @@ return galleryItems.map(({ preview, original, description }) => {
 
 galleryContainer.addEventListener('click', onImageClick);
 
+
+
 function onImageClick(evt) {
     evt.preventDefault();
 
@@ -31,8 +33,7 @@ function onImageClick(evt) {
         return;
     }
     galleryContainer.addEventListener('keydown', onCloseEscape);
-
-
+    
     const instance = basicLightbox.create(
         `<img src = "${evt.target.dataset.source}">`,
     {
@@ -45,7 +46,7 @@ instance.show();
 
 
 function onCloseEscape(evt) {
-    if(evt.target.nodeName === 'I') {
+    if(evt.code === "Escape") {
         instance.close()
     }
 }
